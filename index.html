@@ -1,12 +1,44 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alien Mining</title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alien Mining</title>
+    <link rel="stylesheet" href="/styles.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- break_infinity -->
+    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <!-- Antimatter Dimensions Notations -->
+    <script src="/js/ad_notations.esm.js" type="module"></script>
 </head>
 <body>
-<script type="module" src="/src/main.js"></script>
+<div id="alerts" style="display:none;float:right;">
+    <p id="alerts-text"></p>
+</div>
+
+<div id="loading">
+    <p style="color:red;text-align:center;font-size:50px">Loading...</p>
+    <img src="images/loading.gif" style="margin-left:47.5%" width="64" height="64" alt="Loading...">
+</div>
+
+<button id="woodGain" onclick="gainResource('wood')">Gain 1 Wood</button>
+<div id="currencies">
+    <p id="woodCurrency">Wood: 0</p>
+</div>
+
+<button onclick="toggleSettings()">Settings</button>
+<div id="settings" style="display:none;">
+    <button onclick="saveToLocalStorage()">Save Data</button>
+    <button onclick="loadFromLocalStorage()">Load Data</button>
+    <br>
+    <button onclick="exportData()">Export Data</button>
+    <button onclick="importData()">Import Data</button>
+    <br>
+    <input type="text" name="dataForm" id="dataForm" value="">
+</div>
+
+<!-- Main JS file -->
+<script src="/js/main.js"></script>
 </body>
 </html>
