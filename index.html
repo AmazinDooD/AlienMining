@@ -14,32 +14,47 @@
 </head>
 <body>
 <div id="alerts" style="display:none;float:right;">
-    <p id="alerts-text"></p>
+    <p id="alerts-text" class="main-text"></p>
 </div>
 
 <div id="loading">
-    <p style="color:red;text-align:center;font-size:50px">Loading...</p>
-    <img src="images/loading.gif" style="margin-left:47.5%" width="64" height="64" alt="Loading...">
+    <p style="text-align:center;font-size:50px" class="main-text">Loading...</p>
+    <img src="images/loading.gif" style="margin-left:44.5%" width="128" height="128" alt="Loading...">
 </div>
 
-<button id="woodGain" onclick="gainResource('wood')">Gain 1 Wood</button>
+<button id="woodGain" onclick="gainResource('wood')" class="button btn-med btn-orange tooltip-parent">Gain 1 Wood</button>
+<p class="tooltip">Mine down a tree to gain some wood. Simple.</p>
+
 <div id="currencies">
-    <p id="woodCurrency">Wood: 0</p>
+    <p id="woodCurrency" class="main-text">Wood: 0</p>
 </div>
 
-<button onclick="toggleSettings()">Settings</button>
+<div id="recipes"></div>
+
+<button onclick="toggleSettings()" class="button btn-med btn-grey">Settings</button>
 <div id="settings" style="display:none;">
-    <button onclick="saveToLocalStorage()">Save Data</button>
-    <button onclick="loadFromLocalStorage()">Load Data</button>
+    <button onclick="saveToLocalStorage()" class="button btn-sml btn-blue tooltip-parent">Save Data</button>
+    <p class="tooltip">Save your data to localStorage, aka your cookies.</p>
+    <button onclick="loadFromLocalStorage()" class="button btn-sml btn-light-blue tooltip-parent">Load Data</button>
+    <p class="tooltip">Load your data from localStorage, aka your cookies.</p>
     <br>
-    <button onclick="exportData()">Export Data</button>
-    <button onclick="importData()">Import Data</button>
+    <button onclick="exportData()" class="button btn-sml btn-purple tooltip-parent">Export Data</button>
+    <p class="tooltip">Generate a code for your save file which is entered below.</p>
+    <button onclick="importData()" class="button btn-sml btn-purple tooltip-parent">Import Data</button>
+    <p class="tooltip">Retrieve your data from a code entered below.</p>
     <br>
     <input type="text" name="dataForm" id="dataForm" value="">
+    <br>
+    <button onclick="switchNotation()" class="button btn-sml btn-yellow tooltip-parent">Switch Notation</button>
+    <p class="tooltip" id="notationTooltip">Switch the number notation style. Currently: Standard (111.11 M)</p>
+    <button onclick="switchDecimalPlaces()" class="button btn-sml btn-yellow tooltip-parent">Switch Decimal Places</button>
+    <p class="tooltip" id="placesTooltip">Switch the amount of decimal places in each number. Currently: 2 (111.11 M)</p>
+    <br>
 </div>
 
 <!-- Main JS file -->
-<!-- purp -->
 <script src="/js/main.js"></script>
 </body>
 </html>
+
+<!-- Times I've typed "tootlip" instead of tooltip: 5 -->
