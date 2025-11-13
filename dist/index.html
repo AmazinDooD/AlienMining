@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alien Mining</title>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- break_infinity -->
+    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <!-- Antimatter Dimensions Notations -->
+  <script type="module" crossorigin src="./assets/index-CFxaLAaa.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CX3rrtbs.css">
+</head>
+<body>
+<div id="alerts" style="display:none;float:right;">
+    <p id="alerts-text" class="main-text"></p>
+</div>
+
+<div id="loading">
+    <p style="text-align:center;font-size:50px" class="main-text">Loading...</p>
+    <img src="data:image/gif;base64,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" style="margin-left:44.5%" width="128" height="128" alt="Loading...">
+</div>
+
+<button id="woodGain" onclick="gainResource('wood')" class="button btn-med btn-orange tooltip-parent">Gain 1 Wood</button>
+<p class="tooltip">Mine down a tree to gain some wood. Simple.</p>
+
+<div id="currencies">
+    <p id="woodCurrency" class="main-text">Wood: 0</p>
+    <p id="charcoalCurrency" class="main-text">Charcoal: 0</p>
+</div>
+
+<div id="recipes"></div>
+
+<button onclick="toggleSettings()" class="button btn-med btn-grey">Settings</button>
+<div id="settings" style="display:none;">
+    <button onclick="saveToLocalStorage()" class="button btn-sml btn-blue tooltip-parent">Save Data</button>
+    <p class="tooltip">Save your data to localStorage, aka your cookies.</p>
+    <button onclick="loadFromLocalStorage()" class="button btn-sml btn-light-blue tooltip-parent">Load Data</button>
+    <p class="tooltip">Load your data from localStorage, aka your cookies.</p>
+    <br>
+    <button onclick="exportData()" class="button btn-sml btn-purple tooltip-parent">Export Data</button>
+    <p class="tooltip">Generate a code for your save file which is entered below.</p>
+    <button onclick="importData()" class="button btn-sml btn-purple tooltip-parent">Import Data</button>
+    <p class="tooltip">Retrieve your data from a code entered below.</p>
+    <br>
+    <input type="text" name="dataForm" id="dataForm" value="">
+    <br>
+    <button onclick="switchNotation()" class="button btn-sml btn-yellow tooltip-parent">Switch Notation</button>
+    <p class="tooltip" id="notationTooltip">Switch the number notation style. Currently: Standard (111.11 M)</p>
+    <button onclick="switchDecimalPlaces()" class="button btn-sml btn-yellow tooltip-parent">Switch Decimal Places</button>
+    <p class="tooltip" id="placesTooltip">Switch the amount of decimal places in each number. Currently: 2 (111.11 M)</p>
+    <br>
+</div>
+
+<!-- Main JS file -->
+<script src="/js/main.js"></script>
+</body>
+</html>
+
+<!-- Times I've typed "tootlip" instead of tooltip: 5 -->
